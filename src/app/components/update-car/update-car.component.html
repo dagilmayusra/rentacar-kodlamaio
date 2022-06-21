@@ -1,0 +1,69 @@
+<form
+  class="car-update ml-auto"
+  [formGroup]="updateCarForm"
+  (ngSubmit)="update()"
+>
+<div class="form-group m-3">
+  <img [src]="updateCarForm.value.img" alt="" width="200"/>
+  <label for="img" class="block">İmage</label>
+  <input
+    type="text"
+    formControlName="img"  
+  />
+</div>
+  <div class="form-group m-3">
+    <label for="brandName" class="block">Brand Name</label>
+    <select
+      class="form-control"
+      required
+      name="brandName"
+      id="brandName"
+      formControlName="brandName"
+      aria-describedby="brandName-help"
+    >
+      <option
+        *ngFor="let brand of brands"
+        [value]="brand.id"
+        [value]="brand.name"
+      >
+        {{ brand.name }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group m-3">
+    <label for="brandName" class="block">Color Name</label>
+    <select
+      class="form-control"
+      required
+      name="colorName"
+      id="colorName"
+      formControlName="colorName"
+      aria-describedby="colorName-help"
+    >
+      <option
+        *ngFor="let color of colors"
+        [value]="color.id"
+        [value]="color.colorName"
+      >
+        {{ color.colorName }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group m-3">
+    <label for="description" class="block">Description</label><br>
+    <input type="text" formControlName="description"/>
+  </div>
+  <div class="form-group m-3">
+    <label for="dailyPrice" class="block">Daily Price</label><br>
+    <input type="text" formControlName="dailyPrice"/>
+  </div>
+  <div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="updateCarForm.invalid"
+    >
+      Güncelle
+    </button>
+  </div>
+</form>

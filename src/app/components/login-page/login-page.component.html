@@ -1,0 +1,49 @@
+<div class="d-flex justify-content-center align-items-center mt-5">
+  <div class="card">
+    <ul class="nav nav-pills">
+      <li class="nav-item text-center">
+        <div
+          class="bg-success rounded-circle m-auto"
+          style="width: 50px; height: 50px; line-height: 50px; color: #fff"
+        >
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <h2>Login</h2>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div
+        class="tab-pane fade show active"
+        id="pills-home"
+        role="tabpanel"
+        aria-labelledby="pills-home-tab"
+      >
+        <div class="form px-4 pt-5"
+            [formGroup]="loginForm"
+        >
+          <input
+          email
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Email address"
+            formControlName="email"
+          />
+          <div class="alert alert-danger" *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').dirty"> email zorunludur</div>
+
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="form-control"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <div class="alert alert-danger" *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').dirty"> password zorunludur</div>
+          <button class="btn btn-success btn-block" (click)="login()">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

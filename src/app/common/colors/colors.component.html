@@ -1,0 +1,42 @@
+<br />
+<ul class="list-group">
+  <a
+    class="list-group-item list-group-item-disabled d-flex justify-content-between"
+    style="background-color: #DA4730;"
+  >
+    <div style="color:white;">COLORS</div>
+    <div class="mr-5">
+      <button type="button" class="btn btn-link" style="color: white;" routerLink="/addColor">
+        <i class="fa fa-plus"></i>
+      </button>
+    </div>
+  </a>
+  <div *ngFor="let color of colors">
+    <li
+      class="list-group-item list-group-item-disabled d-flex justify-content-between"
+    >
+      <div (click)="getColorId(color)">
+        <img src="{{ color.image }}" style="width: 40px; margin-right: 20px" />
+        {{ color.colorName }}
+      </div>
+      <div class="mr-5">
+        <button
+          type="button"
+          class="btn btn-link"
+          style="color: #DA4730;"
+          (click)="deleteColorName(color.id)"
+        >
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-link"
+          style="color: #DA4730;"
+          routerLink="/updateColor/{{ color.id }}"
+        >
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+      </div>
+    </li>
+  </div>
+</ul>

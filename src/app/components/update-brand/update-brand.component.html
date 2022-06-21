@@ -1,0 +1,26 @@
+<form class="brand-update ml-auto"
+  [formGroup]="updateBrandForm"
+  (ngSubmit)="update()"
+>
+  <div class="form-group d-flex flex-column">
+    <img width="100px" class="mb-3" [src]="updateBrandForm.value.image" />
+    <input type="text" formControlName="image" class="mb-3" />
+  </div>
+  <div class="form-group">
+    <input
+      type="text"
+      id="name"
+      formControlName="name"
+      class="form-control"
+      placeholder=""
+      class="mb-3"
+    />
+    <div class="alert alert-danger" *ngIf="
+    updateBrandForm.get('name').hasError('required') &&
+    updateBrandForm.get('name').dirty
+  ">ürün adı zorunludur</div>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+  </div>
+</form>

@@ -1,0 +1,28 @@
+<div class="dropdown">
+  <button
+    class="btn btn-sm dropdown-toggle"
+    style="color: white;"
+    type="button"
+    id="dropdownMenuButton1"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Sepetim
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li *ngFor="let cartItem of cartItems">
+      <a class="dropdown-item">
+        <span style="color: black;">{{ cartItem.quantity }}</span
+        >  {{ cartItem.car.brandName
+        }}<span 
+          (click)="removeFromCart(cartItem.car)"
+          class=""
+          >
+          <button class="btn btn-light" style="background-color: #DA4730; color: white;"> Sil</button>
+          </span
+        ></a
+      >
+    </li>
+    <li></li>
+  </ul>
+</div>
