@@ -21,6 +21,9 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
 import { AdditionalServicesComponent } from './components/additional-services/additional-services.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { RegisterComponent } from './components/register/register.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -38,14 +41,17 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     RentComponent,
     CartSummaryComponent,
     AdditionalServicesComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    RegisterComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    GoogleMapsModule,
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}

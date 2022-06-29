@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
@@ -20,5 +21,9 @@ export class AccountService {
     else{
       return false;
     }
+  }
+
+  addUser(val:User):Observable<User>{
+    return this.httpClient.post<User>('http://localhost:3000/users',val)
   }
 }
