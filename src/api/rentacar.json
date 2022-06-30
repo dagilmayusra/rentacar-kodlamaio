@@ -24,11 +24,6 @@
       "id": 5,
       "name": "Skoda",
       "image": "../assets/logos/skoda.png"
-    },
-    {
-      "name": "YÜSRA DAĞILMA",
-      "image": "https://productimages.hepsiburada.net/s/54/1500/11175550517298.jpg",
-      "id": 6
     }
   ],
   "colors": [

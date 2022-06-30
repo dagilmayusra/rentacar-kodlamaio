@@ -13,6 +13,9 @@
         <form class="d-flex">
           <app-cart-summary></app-cart-summary>
         </form>
+         Dil : <select #selLang (change)="translateLanguageTo(selLang.value)" >
+          <option *ngFor="let language of translate.getLangs()" [value]="language" >{{ language }}</option>
+        </select>
         <div class="dropdown">
           <button
             class="btn btn-sm dropdown-toggle"

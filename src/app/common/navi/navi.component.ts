@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navi',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NaviComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public translate: TranslateService
+  ){} 
 
   ngOnInit(): void {
+      // Register translation languages
+    this.translate.addLangs(['en', 'tr']);
+    // Set default language
+    this.translate.setDefaultLang('tr');
+  }
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
   }
 
 }
